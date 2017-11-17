@@ -1,13 +1,18 @@
 body {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 10vh 87vh 3vh;
+    grid-template-rows: 8vh 89vh 3vh;
     grid-template-areas: 'header' 'main' 'footer';
     font-family: 'Lato', sans-serif;
 }
 header {
     grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px #888899 solid;
 }
+
 main {
     grid-area: main;
     display: flex;
@@ -15,14 +20,11 @@ main {
 footer{
     grid-area: footer;
 }
-
-
-
 .content {
     width: 100%;
     display: flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
 }
 .user-screen, .base-screen {
     width: 85%;
@@ -56,6 +58,7 @@ footer{
 .table_blur a {
     display: block;
     text-decoration: none;
+    color: black;
 }
 
 .table_blur {
@@ -106,15 +109,26 @@ footer{
   color: transparent;
   text-shadow: 0 0 3px #a09f9d;
 }
+.table_blur tbody:hover a {
+  color: transparent;
+  text-shadow: 0 0 3px #a09f9d;
+}
+.table_blur tbody:hover tr:hover a {
+  color: #444444;
+  text-shadow: none;
+}
 .table_blur tbody:hover tr:hover td {
   color: #444444;
   text-shadow: none;
 }
 
 ul.css-menu-2 {
+    width: 625px;
+    padding-left: 25px;
+    margin: 0;
+margin-top: 17px;
         padding-top: 5px;
     list-style: none;
-    border-bottom: 1px #888899 solid;
     padding-bottom: 12px;
 }
 
@@ -137,39 +151,49 @@ ul.css-menu-2 li a:hover {
 }
 
 ul.css-menu-2 li a.selected {
+
     color: #555566;
     background: #ffffff;
     border: 1px #888899 solid;
     border-bottom: 2px #ffffff solid;
     padding: 10px 30px 10px 30px;
 }
-
-#icon {
+/*^^^^^^^^^^^^^^^^^*/
+.css-menu-2 .plus-user, .css-menu-2 .plus-film, .css-menu-2 .plus-in-database, .css-menu-2 .give-film  {
     width: 70px;
-    background-image: url(../images/tape.png);
+    background-image: url(../images/icons/plus.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-
+}
+.give-film{
+    visibility: hidden;
 }
 
+.css-menu-2 .back-to-users, .css-menu-2 .back-to-movies, .css-menu-2 .back-to-base{
+    width: 70px;
+    background-image: url(../images/icons/back.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+/*^^^^^^^^^^^^^^^^^*/
 .collapsibleList li{
-  list-style-image : url('../images/video.png');
+  list-style-image : url('../images/icons/video.png');
   cursor           : auto;
 
 }
 
 li.collapsibleListOpen{
-  list-style-image : url('../images/folder.png');
+  list-style-image : url('../images/icons/folder.png');
   cursor           : pointer;
 }
 
 li.collapsibleListClosed{
-  list-style-image : url('../images/folder.png');
+  list-style-image : url('../images/icons/folder.png');
   cursor           : pointer;
 }
-.film {
-/*width: 100%;*/
+.film-screen {
 display: grid;
 grid-template-columns: 55% 45%;
 grid-template-rows: 7vh 80vh;
@@ -184,7 +208,6 @@ grid-template-areas:
     justify-content: center;
 }
 .description{
-
     padding: 5% 5% 0 15%;
     gdrid-area: description;
     display: flex;
@@ -196,7 +219,7 @@ grid-template-areas:
 margin-top: 0.1em; /* Отступ сверху */
     margin-bottom: 0.5em;
 }
-.description span {
+.description span, .card-user span {
     color: rgb(105, 46, 139);
     font-weight: 600;
 }
@@ -217,6 +240,94 @@ margin-top: 0.1em; /* Отступ сверху */
 }
 .movie-screen li a {
 text-decoration: none;
+}
+.card-user{
+    display: flex;
+    justify-content:center;
+    align-items:stretch;
+}
+span.black {
+    color: rgb(88, 46, 66);
+    font-weight: 600;
+}
+.add-user-screen{
+    width: 500px;
+    height: 500px;
+    background: url(../images/form/login_bg.png) top left no-repeat;
+    background-size: 103%;
+}
+.form{
+    width: 300px;
+	height: 200px;
+	margin: 0px auto;
+	padding-top: 80px;
+}
+.form form{
+    margin-top: 95px;
+}
+.text_input:focus {
+	outline: 0;
+}
+.login-text {
+	text-align:center;
+	margin:15px;
+	font-family: 'Lobster', cursive;
+}
+.radioBtn{
+    margin: 5px 5px 0 5px;
+    padding: 0px 0px 0px 10px;
+}
+.sex{
+    margin: 10px 5px 5px 28px;
+    padding: 0px 0px 0px 10px;
+}
+.text_input  {
+    font-family: 'Lobster', cursive;
+	border: 0;
+	margin: 5px 35px 0 34px;
+	padding: 0px 0px 0px 10px;
+	width: 229px;
+	height: 32px;
+	background: url('../images/form/text_input.png') top left no-repeat;
+}
+.form input[type="submit"]{
+    margin: 15px 77px;
+}
+.add-category input[type="text"],.add-category input[type="submit"]{
+    font-family: 'Lobster', cursive;
+}
+
+.film-item {
+    margin: 10px 10px;
+    width: 200px;
+    height: 250px;
+    background-color: gray;
+}
+.popup{
+    max-height: 600px;
+    height: 90%;
+}
+.select-movie {
+    margin-top: 10px;
+    height: 550px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+}
+.debtor {
+    background-color: #edc7c7;
+}
+.add-movie-screen form, .add-movie-in-base-screen form{
+    display: flex;
+    flex-direction: column;
+}
+.add-movie-screen label, .add-movie-in-base-screen label{
+    padding: 10px;
 }
 @font-face {
     font-family: 'Lato';

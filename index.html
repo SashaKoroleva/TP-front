@@ -8,6 +8,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cardUser.css">
+    <link rel="stylesheet" href="css/modalWindow.css">
+    <link rel="stylesheet" href="css/movies-in-database.css">
+    <link rel="stylesheet" href="css/search.css">
     <script src="js/utils.js" defer></script>
     <script src="js/CollapsibleLists.src.js" defer></script>
 
@@ -16,22 +20,67 @@
 
 <body>
     <header>
-
         <nav>
-
-
             <ul class="css-menu-2">
-                <li><a href="#" id="icon" onclick=actionBtnBack()></a></li>
+                <li><a href="#" class="icon" id="icon" onclick=actionBtn()></a></li>
                 <li><a href="#" id="users" class="selected" onclick=actionBtnUsers()>Пользователи</a></li>
                 <li><a href="#" id="movies" onclick=actionBtnMovies()>Фильмы</a></li>
                 <li><a href="#" id="movies-in-database" onclick=actionBtnBase()>Фильмы в базе</a></li>
+                <li><a href="#giveFilmScreen" class="give-film" id="give-film"></a></li>
             </ul>
         </nav>
+        <form class="search">
+            <input type="text" placeholder="Искать...">
+            <button type="submit"></button>
+        </form>
     </header>
     <main>
-        <div class="content" id="content">
+        <a href="#" class="overlay" id="giveFilmScreen"></a>
+        <div class="popup">
+            <div class="search-select-film">
+                <form><input type="text" placeholder=" Найти фильм" name="searchFilm" required><input type="submit" name="plus" value=">"></form>
+            </div>
+            <div class="select-movie">
+                <a href="#">
+                    <div class="film-item"></div>
+                </a>
+                <a href="#">
+                    <div class="film-item"></div>
+                </a>
+                <a href="#">
+                    <div class="film-item"></div>
+                </a>
+                <a href="#">
+                    <div class="film-item"></div>
+                </a>
+                <a href="#">
+                    <div class="film-item"></div>
+                </a>
+                <a href="#">
+                    <div class="film-item"></div>
+                </a>
+                <a href="#">
+                    <div class="film-item"></div>
+                </a>
+                <a href="#">
+                    <div class="film-item"></div>
+                </a>
+                <a href="#">
+                    <div class="film-item"></div>
+                </a>
+                <a href="#">
+                    <div class="film-item"></div>
+                </a>
 
+            </div>
+            <a href="#" class="close" title="Close"></a>
         </div>
+
+        <div class="content" id="content">
+        
+        </div>
+
+
     </main>
     <footer></footer>
 </body>

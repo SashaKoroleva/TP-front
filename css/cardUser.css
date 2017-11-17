@@ -1,0 +1,39 @@
+.card-user a {
+    display: block;
+    text-decoration: none;
+}
+.about-user {
+background: #ebf3f9;
+}
+
+.card-user {
+    margin-top: 70px;
+  width: 100%;
+  background: #f5ffff;
+  border-collapse: collapse;
+  text-align: left;
+}
+ .card-user .card-info td {
+     background: #f7ebfb;
+     border: 1px solid #e0cde9;
+ }
+ .center{
+     text-align: center;
+ }
+
+.card-user td {
+  border: 1px solid #ebf3f9;
+  padding: 10px 15px;
+  position: relative;
+  transition: all 0.5s ease;
+}
+.remove{
+    opacity: 0;
+}
+.remove:hover{
+    opacity: 1;
+}
+.card-user td.invisible   {
+    border: 1px solid white;
+    background-color: white;
+}

@@ -1,0 +1,22 @@
+/* скрываем чекбоксы и блоки с содержанием */
+.hide {
+    display: none;
+}
+.hide + label ~ div{
+    display: none;
+}
+/* оформляем текст label */
+.hide + label {
+    cursor: pointer;
+    display: block;
+}
+/* вид текста label при активном переключателе */
+.hide:checked + label {
+    padding-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 0;
+}
+
+.hide:checked + label + div {
+    display: block;
+}
