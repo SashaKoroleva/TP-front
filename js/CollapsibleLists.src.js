@@ -114,6 +114,3 @@ const CollapsibleLists = (function(){
   return {apply, applyTo};
 
 })();
-
-
-CollapsibleLists.applyTo(document.getElementById('newList'));

@@ -298,10 +298,16 @@ span.black {
 }
 
 .film-item {
+      background-size: cover;
+       overflow: hidden;
     margin: 10px 10px;
     width: 200px;
     height: 250px;
-    background-color: gray;
+}
+.film-item img {
+    height: 100%;
+   width: auto;
+   max-width: 100%;
 }
 .popup{
     max-height: 600px;
@@ -323,12 +329,15 @@ span.black {
     background-color: #edc7c7;
 }
 .add-movie-screen form, .add-movie-in-base-screen form{
+    margin-right: 100px;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
 }
 .add-movie-screen label, .add-movie-in-base-screen label{
     padding: 10px;
 }
+
 @font-face {
     font-family: 'Lato';
     src: url(../fonts/LatoRegular.woff2)format('woff2');
